@@ -3,6 +3,7 @@ import _ from 'lodash';
 import './game.css';
 import Stars from './star';
 import Button from './button';
+import Answer from './answer';
 
 var isSolutionPossible = (arr, n) => {
     if (arr.indexOf(n) >= 0)  { return true; }
@@ -21,16 +22,6 @@ var isSolutionPossible = (arr, n) => {
   }
   return false; 
 };
-
-const Answer = (props) => {
-return (
-  <div className="col-5">
-    {props.selectedNumbers.map((number, i) =>
-        <span key={i} onClick={() => props.unselectNumber(number)}>{number}</span>
-    )}
-  </div>
-)
-}
 
 const Numbers = (props) => {  
   const numberClassName = (number) => {
