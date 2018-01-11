@@ -5,6 +5,7 @@ import Stars from './star';
 import Button from './button';
 import Answer from './answer';
 import Numbers from './numbers';
+import DoneFrame from './done-frame';
 
 var isSolutionPossible = (arr, n) => {
     if (arr.indexOf(n) >= 0)  { return true; }
@@ -23,15 +24,6 @@ var isSolutionPossible = (arr, n) => {
   }
   return false; 
 };
-
-const DoneFrame = (props) => {
-  return (
-    <div className="text-center"> 
-      <h2>{props.doneStatus}</h2>
-    <button className="btn btn-secondary" onClick={props.resetGame }>Play Again</button>
-  </div>
-)
-}
 
 Numbers.list = _.range(1, 10)
 
