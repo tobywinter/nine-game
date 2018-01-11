@@ -4,6 +4,7 @@ import './game.css';
 import Stars from './star';
 import Button from './button';
 import Answer from './answer';
+import Numbers from './numbers';
 
 var isSolutionPossible = (arr, n) => {
     if (arr.indexOf(n) >= 0)  { return true; }
@@ -22,27 +23,6 @@ var isSolutionPossible = (arr, n) => {
   }
   return false; 
 };
-
-const Numbers = (props) => {  
-  const numberClassName = (number) => {
-    if(props.selectedNumbers.indexOf(number) >= 0) {
-      return 'selected';
-  } 
-  if(props.usedNumbers.includes(number)) {
-      return 'used';
-  }
-}
-return (
-  <div className="card text-center">
-    <div>
-        {Numbers.list.map((number, i) => 
-          <span key={i} className={numberClassName(number)}
-        onClick={() => props.selectNumber(number)}>{number}</span>
-      )}
-    </div>
-  </div>
-)
-}
 
 const DoneFrame = (props) => {
   return (
